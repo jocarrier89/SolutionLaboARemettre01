@@ -3,29 +3,31 @@
 //Date: 10-09-2020
 
 
-#include <iostream> // intègre le coffre à outils pour communiquer avec l'utilisateur
+#include <iostream> // intÃ¨gre le coffre Ã  outils pour communiquer avec l'utilisateur
 
 
-void main() // Liste les paramètres éventuels
+void main() // Liste les paramÃ¨tres Ã©ventuels
 {
-	setlocale(LC_ALL, ""); // Permet d'intégrer les caractères accentués	
+	setlocale(LC_ALL, ""); // Permet d'intÃ©grer les caractÃ¨res accentuÃ©s	
 
-	int number;   // Dénote les multiples variables du programme
+	int number;   // DÃ©note les multiples variables du programme
 	
 	
 
-	std::cout << "Veuillez entrez un nombre contenant 5 chiffres : "; // Le message qui apparait à l'écran de l'utilisateur
+	std::cout << "Veuillez entrez un nombre contenant 5 chiffres : "; // Le message qui apparait Ã  l'Ã©cran de l'utilisateur
 
-	std::cin >> number;     // Représente la variable entrée par l'utilisateur
+	std::cin >> number;     // ReprÃ©sente la variable entrÃ©e par l'utilisateur
 	
-	int numero5 = number  % 10  ;  // le modulo de number devrait donner le chiffre recherché
-	int numero4 = number / 10 % 10 ; // la variable divisé en 10 modulo 10 devrait donner le chiffre de la dizaine
+	int numero5 = number  % 10  ;  // le modulo de number devrait donner le chiffre recherchÃ©
+	int numero4 = number / 10 % 10 ; // FR : la variable divisÃ© en 10 modulo 10 devrait donner le chiffre de la dizaine
 	int numero3 = number / 100  % 10 ; // devrait donner le chiffre de la centaine
-	int numero2 = number / 1000 % 10 ; //devrait donner le chiffre des milliers
-	int numero1 = number / 10000  ; // devrait donner le chiffre de la centaine de millier&
+	int numero2 = number / 1000 % 10 ; // FR : devrait donner le chiffre des milliers
+	int numero1 = number / 10000  ; // FR : devrait donner le chiffre de la centaine de millier&
 	
+	// KM : Il faudrait faire le test avant de faire les calculs
 	if (number>=10000) // si le chiffre est en dessous de 10 000, automatiquement il contiendra moins de 5 chiffres
 	{
+		// KM : Rien ne garantit ici que le nombre n'aura pas 6 chiffres ou plus
 		std::cout << numero1  << std::endl; // veut terminer une ligne par chacune des variables
 		std::cout << numero2  << std::endl;
 	    std::cout << numero3  << std::endl;
@@ -34,6 +36,7 @@ void main() // Liste les paramètres éventuels
 	}
 	else // SI, ne fonctionne pas, alors :
 	{
+		
 		std::cout << "Ce nombre ne contient pas 5 chiffres"; // lorsque le chiffre ne contient pas 5 chiffres, ce message apparait.
 
 	}
